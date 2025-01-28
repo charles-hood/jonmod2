@@ -26,7 +26,7 @@ Dynamic Styling: Variations are randomly applied to create unique outputs.
 Unicode Compatibility: Ensures substitutions work across platforms.
 
 # Reference Python Implementation
-import random
+```import random
 
 def jonmod2(text):
     similar_chars = {
