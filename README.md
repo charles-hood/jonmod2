@@ -62,7 +62,7 @@ def jonmod2(text):
 
 Example Usage
 print(jonmod2("Example Text"))
-
+```
 # Standard Definition
 Compatibility: Text styled in Jonmod2 should be legible on modern platforms supporting Unicode.
 Minimum Changes: At least 25% of the letters in the text must be altered to qualify as Jonmod2.
