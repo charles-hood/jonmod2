@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonmod2 Open Standard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: Courier, monospace;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jonmod2 Open Standard</h1>
+    <p><strong>Accessible and Aesthetic Text Variation</strong></p>
+
+    <h2>Purpose</h2>
+    <p>Jonmod2 is an open text-styling standard designed to enhance readability, particularly for individuals with dyslexia, while introducing subtle aesthetic variation for general use. It balances accessibility and visual appeal by applying strategic Unicode substitutions, diacritics, and controlled spacing.</p>
+
+    <h2>Reasoning Behind Jonmod2</h2>
+    <ul>
+        <li><strong>Accessibility:</strong> Inspired by dyslexia-friendly fonts, Jonmod2 provides visual cues that help distinguish similar-looking letters (e.g., b, d, p, and q).</li>
+        <li><strong>Aesthetic Diversity:</strong> Adds stylistic variation using diacritics, glyphs, and spacing while avoiding excessive chaos (e.g., Zalgo text).</li>
+        <li><strong>Universal Readability:</strong> Ensures legibility for all audiences by maintaining intuitive substitutions and subtle modifications.</li>
+    </ul>
+
+    <h2>Intended Effect</h2>
+    <ul>
+        <li><strong>Enhanced Readability:</strong> Reduces confusion for dyslexic readers by visually differentiating letters.</li>
+        <li><strong>Aesthetic Customization:</strong> Creates visually distinct text for creative purposes, such as branding or social media.</li>
+        <li><strong>Balanced Design:</strong> Avoids over-stylization, ensuring text remains functional and professional.</li>
+    </ul>
+
+    <h2>Key Style Guidelines</h2>
+    <ol>
+        <li><strong>Unicode Substitution:</strong> Replace standard letters with visually similar Unicode characters, prioritizing substitutions that preserve the original shape and sound.</li>
+        <li><strong>Strategic Diacritics:</strong> Add accents sparingly to high-frequency letters (e.g., e, t, a). Avoid using more than one diacritic per letter.</li>
+        <li><strong>Controlled Spacing:</strong> Introduce slight spacing between certain letters to reduce visual crowding.</li>
+        <li><strong>Avoid Over-Styling:</strong> Maintain clarity and intent of the original text.</li>
+    </ol>
+
+    <h2>Implementation Details</h2>
+    <ul>
+        <li><strong>Letter Frequency:</strong> Common letters (e.g., e, t, a) receive subtle variations.</li>
+        <li><strong>Dynamic Styling:</strong> Variations are randomly applied to create unique outputs.</li>
+        <li><strong>Unicode Compatibility:</strong> Ensures substitutions work across platforms.</li>
+    </ul>
+
+    <h2>Reference Python Implementation</h2>
+    <pre><code>import random
+
+def jonmod2(text):
+    similar_chars = {
+        'a': ['a', 'á', 'ä', 'å'],
+        'b': ['b', 'ƀ', 'ḃ'],
+        'c': ['c', 'ç', 'č', 'ċ'],
+        'd': ['d', 'ð', 'ď', 'ḋ'],
+        'e': ['e', 'é', 'è', 'ë', 'ē'],
+        'g': ['g', 'ǵ', 'ģ', 'ġ'],
+        'h': ['h', 'ĥ', 'ȟ'],
+        'i': ['i', 'í', 'ì', 'ï', 'ī'],
+        'l': ['l', 'ł', 'ľ', 'ļ'],
+        'n': ['n', 'ñ', 'ň', 'ņ'],
+        'o': ['o', 'ó', 'ò', 'ö', 'ø'],
+        'p': ['p', 'þ', 'ƥ'],
+        'r': ['r', 'ŕ', 'ř'],
+        's': ['s', 'š', 'ş'],
+        't': ['t', 'ť', 'ţ'],
+        'u': ['u', 'ú', 'ù', 'ü', 'û'],
+        'v': ['v', 'ṽ'],
+        'w': ['w', 'ŵ'],
+        'y': ['y', 'ý', 'ŷ', 'ÿ'],
+        'z': ['z', 'ž', 'ź', 'ż']
+    }
+    styled_text = ""
+    for char in text:
+        if char.lower() in similar_chars:
+            styled_char = random.choice(similar_chars[char.lower()])
+            styled_text += styled_char
+        else:
+            styled_text += char
+    return styled_text
+
+# Example Usage
+print(jonmod2("Example Text"))
+</code></pre>
+
+    <h2>Standard Definition</h2>
+    <ol>
+        <li><strong>Compatibility:</strong> Text styled in Jonmod2 should be legible on modern platforms supporting Unicode.</li>
+        <li><strong>Minimum Changes:</strong> At least 25% of the letters in the text must be altered to qualify as Jonmod2.</li>
+        <li><strong>Preservation:</strong> The meaning of the original text must remain clear and intact.</li>
+    </ol>
+
+    <h2>Licensing</h2>
+    <pre><code>MIT License
+
+Copyright (c) 2025 Jonmod2 Project
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+</code></pre>
+</body>
+</html>
+
